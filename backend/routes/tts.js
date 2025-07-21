@@ -54,9 +54,7 @@ if (!fs.existsSync('uploads')) {
   fs.mkdirSync('uploads')
 }
 const router = express.Router()
-const client = new TextToSpeechClient({
-  keyFilename: path.resolve('credentials/tts-key.json') 
-})
+const client = new TextToSpeechClient()
 
 router.post('/tts', async (req, res) => {
   const { summary } = req.body
